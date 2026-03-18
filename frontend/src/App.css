@@ -1,0 +1,53 @@
+:root {
+  --ease-snappy: cubic-bezier(0.17, 0.25, 0.30, 1.00);
+}
+
+/* TEXT ROLLOVER ANIMATION */
+.nav-text-wrapper {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.nav-text-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s var(--ease-snappy);
+}
+
+.nav-link:hover .nav-text-track {
+  transform: translateY(-20px);
+}
+
+/* Active State: Keep it slid up */
+.nav-link.active .nav-text-track {
+  transform: translateY(-20px);
+}
+
+/* BUTTON FILL ANIMATION */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s linear;
+}
+
+.btn-fill:active {
+  transform: scale(0.95);
+  /* The "Click" snap */
+}
+
+.btn-fill-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-snappy);
+  z-index: 0;
+}
+
+.btn-fill:hover .btn-fill-bg {
+  transform: translateY(0);
+}
