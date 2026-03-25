@@ -14,9 +14,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-    origin: "https://restaurent-web-client.vercel.app"
-}));
+app.use(cors());
 
 app.use('/api/menu', menuRoutes);
 app.use('/api/reservations', reservationRoutes);
